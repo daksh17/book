@@ -1,6 +1,6 @@
 # Read commands by table
 
-Use from `others/book` with Cassandra on port 19442 (demo):  
+Use from the repo root with Cassandra on port 19442 (demo):  
 `CASSANDRA_PORT=19442 python read_faker_data.py <options>`
 
 | Table key | CQL table | Partition key | Clustering key | Example command |
@@ -15,7 +15,8 @@ Use from `others/book` with Cassandra on port 19442 (demo):
 | **t4** | t4_composite_pk_composite_ck | category, shard | event_date, item_id | `--table t4` |
 | | | | | `--table t4 --filter category=books --filter shard=0` |
 | | | | | `--table t4 --filter category=books --filter event_date=2024-01-15` |
-| **t5** | t5_composite_primary_composite_clustering | org_id, location, bucket | logged_at, record_id | `--table t5` |--limit 50
+| **t5** | t5_composite_primary_composite_clustering | org_id, location, bucket | logged_at, record_id | `--table t5` |
+| | | | | `--table t5 --limit 50` |
 | | | | | `--table t5 --filter org_id=org1 --filter location=nyc` |
 | | | | | `--table t5 --filter org_id=org1 --filter bucket=1` |
 | **bookstore** | my_bookstore_example | tenant_id, store_id | category, book_id | `--table bookstore` |
